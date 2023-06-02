@@ -1,0 +1,80 @@
+<h1>project 2 report</h1>
+<h2>Overall description:</h2>
+<p>This website is the recipe application website. You can find recipe in this website and search what you want.</p>
+<p>Design: the website consists of five parts which are home, search page, login page, signup page and recipe page. It is beginning in home page; you can assign to different page with the button on top bar or click the photo of the food.</p>
+<br>
+<p>On the home page, there are different recipe, and search engine. You can search any recipe in the search bar, it will link to search page.</p>
+<img src="https://i.postimg.cc/0Nkkdv9c/image.png" alt="">
+<br>
+<p>On the search page, you also can search any recipe you want</p>
+<img src="https://i.postimg.cc/V635FhGv/image.png" alt="">
+<br>
+<p>
+  On the login page, you can fill in your account detail to login, it also can link to the sign-up page.
+</p>
+<img src="https://i.postimg.cc/MpWHtVD7/image.png" alt="">
+<br>
+<p>On the signup page, you can fill in your account detail to signup, it also can link to the login page.</p>
+<img src="https://i.postimg.cc/c4WL4wPp/image.png" alt="">
+<br>
+<p>
+  On the recipe page, you can see the description, step, ingredient, and tool that you need. Also there are a count function that you can give a link to the recipe.
+</p>
+<img src="https://i.postimg.cc/J4Q4ytLG/image.png" alt="">
+
+<br>
+<br>
+<br>
+<h2>Explanation:</h2>
+<h5>variable:</h5> <p>there are a lot of variable that I stored.</p>
+<p>1. this is the different components i store to be a variable and then i can call it in the new Vue </p>
+<img src="https://i.postimg.cc/ZK5XcqN9/image.png" alt="">
+<p>2. i set different variables of the recipe name and call it into the tag list and recipe list in home page(js line 75)</p>
+<img src="https://i.postimg.cc/HkR0rTX8/image.png" alt="">
+<p>3.	I set different variable of the detail of the recipe and call it into different part of the recipe page. Js line 131</p>
+<img src="https://i.postimg.cc/QVLsB98n/image.png" alt="">
+<br>
+<br>
+<h5>Functions:</h5>
+<p>The like count function: </p>
+<img src="https://i.postimg.cc/HLKpGhGg/image.png" alt="">
+<p>2.	Color change function 1: when you move the mouse on the button of the topbar , then the color will change to pink. Js Line 24</p>
+<p>3.	Color change function 2: when you move your mouse out the button of the topbar , the color will change back to the previous color. As I want to make a Gradient color, so there are four function to make different color. Js Line28</p>
+<p>4.	Color change function 3: when you click the “change color” button on the topbar , then the background color of the button will change. Js Line 12</p>
+<br>
+
+<h5>v-model:</h5>
+<p>1.	I created an input with v-model to show what is the input and check is the recipe already in the below recipe and check is it have that recipe. Which is in the html line 98.</p>
+<br>
+
+<h5>v-if</h5>
+<p>1.	I created an input check is it have that recipe. If it already in the below recipe, then it will show it is in the below recipe. Which is in the html line 98, 101, 104</p>
+<br>
+<h5>v-for</h5>
+<p>1.	I created three v-for loop in the recipesstep variable. One is the tool List </p>
+<p>2.	Second is the ingredientslist.</p>
+<p>3.	Third is the stepList. the recipestep variable is in the js line 176</p>
+<br>
+<h5>v-on</h5>
+<p>1.	I created a lot of v-on to change the color of the button,
+There are 7 v-on in that project, 
+5 is in the topbarFunction (html  line 20),
+1 is in the topbarspace(html line 14),
+1 is in the topbarlogo(html line 3),
+</p>
+<br>
+<h5>Components:</h5>
+<p>There are a lot of components, I make all of the page to be the component and store in html and js</p>
+<img src="https://i.postimg.cc/DwPgY9XS/image.png" alt="">
+<p>The prop is in the componet of “tool-item”, “ing-item”, “step-list” (js line 235-245)</p>
+<br>
+<h5>Transitions and Animation:</h5>
+<p>There are a transition and animation on the logo, when you click the button, it will show the logo.
+Which is in the html line 5.
+</p>
+<br>
+<h5>Routing:</h5>
+<p>I used different routing to link different page , I insert the router link into the button of topbar.</p>
+<br>
+<h5>Class and Style bindings (to apply style):</h5>
+<p>I apply the css with v-bind into the button in html line 15. It can change the color of the button.</p>
