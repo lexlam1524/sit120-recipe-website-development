@@ -1,0 +1,286 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/x-template" id="topbarLogo">
+<div class="icon-logo">
+  <button @click="show = !show"> click me show logo</button><Transition>
+    <h1 v-if="show" class="icon-button">YUMMY</h1>
+  </Transition>
+    
+  </div>
+  
+ 
+</script>
+
+<script type="text/x-template" id="topbarSpace">
+  <div class="top-bar-space"  v-bind:class="{applyBlue: statusBlue}">   
+    <button v-on:click='changeBlue'>change color</button>
+  </div>
+</script>
+
+<script type="text/x-template" id="topbarFunction">
+  <div class="top-bar-function">
+  <div class="home">
+  <div class="home-icon"></div>
+    <router-link to="/"> 
+      <button class="home-button" v-on:mousemove="doSomethingOnMouseMove" v-on:mouseout="doSomethingOnMouseOutHome">Home</button></router-link>
+        
+      </div>
+  <div class="search">
+    <div class="search-icon"></div>
+    <router-link to="/1">
+      <button class="search-button" v-on:mousemove="doSomethingOnMouseMove" v-on:mouseout="doSomethingOnMouseOutsearch">Search</button></router-link>
+        
+      </div>
+  <router-link to="/2">
+  <button class="login-button" v-on:mousemove="doSomethingOnMouseMove" v-on:mouseout="doSomethingOnMouseOutLogin">Log in</button></router-link>
+  <router-link to="/3"><button class="signup-button" v-on:mousemove="doSomethingOnMouseMove" v-on:mouseout="doSomethingOnMouseOutSignup">Sign up</button></router-link>
+    
+  </div>
+</script>
+
+<script type="text/x-template" id="SearchComponent">
+<div>
+  <form action="./search.html" class="search-bar">
+    <input id="searchinput" type="text" style="color:black;">
+    <router-link to="/1">
+      <button type="submit"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKKu__7zhkThol_g2040cIS7uxCHY4QxNy9A&usqp=CAU" alt="search icon" style="width:30px;background-color:white;"></button></router-link></form>
+      
+</div>
+</script>
+
+<script type="text/x-template" id="recipesList">
+  <div class="recipes-list">
+    <router-link to="/4" class="recipe">
+      <img src="https://i.postimg.cc/qqRhQj5w/beef.jpg" class="img recipe-img" alt="" />
+      <h5>{{food[0].beef}}</h5>
+      <p>{{food[0].info}}</p></router-link> 
+    
+    <router-link to="/4" class="recipe">
+      <img src="https://i.postimg.cc/25RWmd1j/sushi.jpg" class="img recipe-img" alt="" />
+      <h5>{{food[0].sushi}}</h5><p>{{food[0].info}}</p></router-link> 
+    
+    <router-link to="/4" class="recipe">
+      <img src="https://i.postimg.cc/9FkTgHV7/soup.jpg" class="img recipe-img" alt="" />
+      <h5> {{food[0].soup}}</h5>
+      <p>{{food[0].info}}</p></router-link> 
+    
+    <router-link to="/4" class="recipe">
+      <img src="https://i.postimg.cc/rmqtR8Gv/chicken.jpg" class="img recipe-img" alt="" />
+      <h5>{{food[0].chicken}}</h5><p>{{food[0].info}}</p></router-link>  
+    <router-link to="/4" class="recipe">
+      <img src="https://i.postimg.cc/zBpHn903/pizza.jpg" class="img recipe-img" alt="" />
+      <h5>{{food[0].pizza}}</h5><p>{{food[0].info}}</p></router-link>  
+  </div>
+</script>
+
+<script type="text/x-template" id="tagList">
+   <div class="tags-container">      
+      <h4>{{food[0].title}}</h4>      
+      <div class="tags-list" >
+        <router-link to="/4" v-on:mousemove="doSomethingOnMouseMovetag" v-on:mouseout="doSomethingOnMouseOuttag"> {{food[0].beef}} </router-link> 
+        <router-link to="/4" v-on:mousemove="doSomethingOnMouseMovetag" v-on:mouseout="doSomethingOnMouseOuttag">{{food[0].chicken}}</router-link>
+        <router-link to="/4" v-on:mousemove="doSomethingOnMouseMovetag" v-on:mouseout="doSomethingOnMouseOuttag">{{food[0].soup}}</router-link> 
+        <router-link to="/4" v-on:mousemove="doSomethingOnMouseMovetag" v-on:mouseout="doSomethingOnMouseOuttag">{{food[0].pizza}}</router-link>
+        <router-link to="/4" v-on:mousemove="doSomethingOnMouseMovetag" v-on:mouseout="doSomethingOnMouseOuttag">{{food[0].sushi}}</router-link>
+        <router-link to="/4" v-on:mousemove="doSomethingOnMouseMovetag" v-on:mouseout="doSomethingOnMouseOuttag">{{food[0].food}}</router-link> 
+      </div>
+  </div>
+</script>
+
+<script type="text/x-template" id="searchPage">
+  <div>
+    <div>
+      <h3 class="login-signup-title">Search</h3>
+      </div>      
+    <div class="searchpage-bar">
+      <h5>{{ message }}</h5>
+  <input v-model="message"> <div v-if="Chicken">
+    pls select below recipe!
+  </div>
+  <div v-else-if='message == "beef"'>
+    pls select below recipe!
+  </div>
+  <div v-else>
+    we dont have this recipe
+  </div>
+    </div>
+    <div class="featured-recipes" >        
+      <div class="recipes-list">
+        
+        <router-link to="/4" class="recipe">
+          <img src="https://i.postimg.cc/qqRhQj5w/beef.jpg" class="img recipe-img" alt="" />
+          <h5>{{food[0].beef}}</h5>
+          <p>{{food[0].info}}</p></router-link>  
+        
+        <router-link to="/4" class="recipe">
+          <img src="https://i.postimg.cc/25RWmd1j/sushi.jpg" class="img recipe-img" alt="" />
+          <h5>{{food[0].sushi}}</h5>
+          <p>{{food[0].info}}</p></router-link>  
+        
+        <router-link to="/4" class="recipe">
+          <img src="https://i.postimg.cc/9FkTgHV7/soup.jpg" class="img recipe-img" alt="" />
+          <h5> {{food[0].soup}}</h5>
+          <p>{{food[0].info}}</p></router-link> 
+        
+        <router-link to="/4" class="recipe">
+          <img src="https://i.postimg.cc/rmqtR8Gv/chicken.jpg" class="img recipe-img" alt="" />
+          <h5>{{food[0].chicken}}</h5>
+          <p>{{food[0].info}}</p></router-link>  
+        
+        <router-link to="/4" class="recipe">
+          <img src="https://i.postimg.cc/zBpHn903/pizza.jpg" class="img recipe-img" alt="" />
+          <h5>{{food[0].pizza}}</h5>
+          <p>{{food[0].info}}</p></router-link>  
+  </div>        
+  </div>
+    
+  </div>
+</script>
+
+<script type="text/x-template" id="signup-page">
+  <div class="login-sign-body">
+    <div class="signup-box">
+      <h1 class="login-signup-title">Sign Up</h1>
+      <h4>Its free and only takes a minute</h4>
+      <form> 
+        <label class="login-signup-label">First Name</label>
+        <input class="login-sign-input" type="text" placeholder="" /> 
+        <label class="login-signup-label">Last Name</label> 
+        <input class="login-sign-input" type="text" placeholder="" /> 
+        <label class="login-signup-label">Email</label> 
+        <input class="login-sign-input" type="email" placeholder="" /> 
+        <label class="login-signup-label">Password</label> 
+        <input class="login-sign-input" type="password" placeholder="" /> 
+        <label class="login-signup-label">Confirm Password</label>
+        <input class="login-sign-input" type="password" placeholder="" /> 
+        <input class="login-sign-button" type="button" value="Submit" /> 
+      </form>
+      <h7> By clicking the Sign Up button,you agree to our <br /> <router-link to="/2">Terms and Condition</router-link> and <router-link to="/2">Policy Privacy</router-link> <br> </h7>
+      <h7 class="login-signup-text"> Already have an account? <router-link to="/2">Login Here</router-link>
+      </h7>
+    </div>
+  </div>
+
+</script>
+
+<script type="text/x-template" id="loginPage">
+  <div class="login-sign-body" id="body">    
+    <div class="login-box">      
+      <h1 class="login-signup-title">Login</h1>      
+      <form class="login-signup-form">        
+        <label class="login-signup-label">Email</label>       
+        <input class="login-sign-input" type="email" placeholder="" >      
+        <label class="login-signup-label">Password</label>       
+        <input class="login-sign-input" type="password" placeholder=""  >     
+        <input class="login-sign-button" type="button" value="Submit"  >          
+  </form>      
+      <br>  
+      <h7 class="login-signup-text" style="color:black">     Not have an account? 
+        <router-link to="/3">Sign Up Here</router-link>   
+  </h7>    
+  </div>    
+  </div>
+</script>
+
+<script type="text/x-template" id="recipeinfo">
+  <section class="recipe-hero">        
+    <img src="https://img.taste.com.au/pasQO3xw/w354-h236-cfill-q80/taste/2019/01/-146669-2.jpg" alt="pizza" class="img recipe-hero-img" />       
+    <article class="recipe-info">         
+      <h2>{{title}} </h2>         
+      <p>            {{description}}          </p>          
+      <div class="recipe-icons">            
+        <article>              
+          <i class="fas fa-clock"></i>             
+          <h5>{{cookinfo[0].prep}} </h5>              
+          <p>{{cookinfo[0].ptime}}</p>           
+  </article>            <article>            
+        <i class="far fa-clock"></i>              
+        <h5>{{cookinfo[0].cook}}</h5>             
+        <p>{{cookinfo[0].ctime}}</p>           
+  </article>            <article>             
+        <i class="fas fa-user-friends"></i>         
+        <h5>{{cookinfo[0].serving}}</h5>           
+        <p>{{cookinfo[0].hser}}</p>          
+  </article>          </div>        
+      <p class="recipe-tags">{{tag[0].tag}} {{tag[0].beef}} {{tag[0].pizza}}        {{tag[0].food}}        </p>         
+      <div class="recipe-tags" id="likecount">           
+        <p>Number Of Like = {{i}} |||
+          <button v-on:click="increaseI()">Like</button></p>           
+        <p>||| {{evaluateI()}}</p>          
+  </div>        
+  </article>      
+  </section>
+</script>
+
+<script type="text/x-template" id="recipestep">
+  <section class="recipe-content">        
+    <article id="step">          
+      <h4>instructions</h4>          
+      <step-list      v-for="item in stepList"      v-bind:step="item"      v-bind:key="item.id"    ></step-list>        
+  </article>        
+    <article class="second-column">          
+      <div id="ingredients-id">           
+        <h4>ingredients</h4>            
+        <ing-item      v-for="item in ingredientsList"      v-bind:ingredients="item"      v-bind:key="item.id"    >
+          
+        </ing-item>          
+  </div>          
+      <div id="tool-id">            
+        <h4>Tools</h4>    
+        <tool-item      v-for="item in toolList"      v-bind:tool="item"      v-bind:key="item.id"    ></tool-item>
+         
+        </div>        
+  </article>      
+  </section>
+</script>
+
+<script type="text/x-template" id="home">
+  <div>
+  <div class="search-container">
+    <search></search> 
+  </div>
+  <section class="recipes-container">
+    <tagList></tagList>
+    <recipeList></recipeList>
+  </section>
+  </div>
+  
+</script>
+
+<script type="text/x-template" id="search">
+  <div>
+     <searchpage></searchpage>
+          
+   </div>
+ </script>
+
+<script type="text/x-template" id="login">
+  <loginpage></loginpage>
+</script>
+
+<script type="text/x-template" id="signup">
+  <signuppage></signuppage>
+</script>
+
+<script type="text/x-template" id="recipe">
+  <main class="page">
+    <div class="recipe-page">
+      <recipeinfo></recipeinfo>
+      <recipestep></recipestep>
+    </div>
+  </main>
+</script>
+
+<div id='app'>
+
+  <header class="top-bar">
+    <div class="top-bar-container" id="top-bar-container">
+      <topbar-logo></topbar-logo>
+      <topbar-space></topbar-space>
+      <topbar-function></topbar-function>
+    </div>
+  </header>
+  <router-view></router-view>
+
+</div>
